@@ -7,16 +7,21 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] float moveSpeed = 1f;
    [SerializeField] float paddingL;
    [SerializeField] float  paddingR;
-    [SerializeField] float paddingT;
-    [SerializeField] float paddingB;
+   [SerializeField] float paddingT;
+   [SerializeField] float paddingB;
   
     Vector2 rawInput;
     
     Vector2 minBounds;
     Vector2 maxBounds;
 
+    Shooter shooter;
+   
+     void Awake()
+    {
+      shooter = GetComponent<Shooter>();
+    }
 
-    // Update is called once per frame
      void Start()
     {
       InitBounds();
@@ -43,4 +48,11 @@ public class PlayerMovement : MonoBehaviour
       minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0,0));
       maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1,1));
     }
+
+    void OnFire(InputValue value){
+
+      if(shooter != null) {
+        shooter.isFiring = value.isPressed;
+    }
+ }
 }
