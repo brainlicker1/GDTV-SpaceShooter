@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7005382001633402767
 CircleCollider2D:
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6000e9f2df68a14898050b2763b5c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8656355795143340560, guid: da07304144c27874c9b2bdc548d27aad, type: 3}
+  projectilePrefab: {fileID: 8656355795143340560, guid: 18c92e3ef20531945b2418b445db8187, type: 3}
   projectileSpeed: 1
   projectileLifetime: 5
   baseFireRate: 0.2

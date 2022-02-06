@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5486253266422234197}
   - component: {fileID: 3174805757874325829}
-  m_Layer: 31
+  m_Layer: 29
   m_Name: laserBlue12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,10 +68,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2066043091
-  m_SortingLayer: 3
+  m_SortingLayerID: -418918317
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65960f68b8931c046a7bcdf8877c4d03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d64308e8b8797b8408d96a60d982a78d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,9 +94,9 @@ GameObject:
   - component: {fileID: 6680459219251729143}
   - component: {fileID: 1932823196297073084}
   - component: {fileID: 3330825034148226210}
-  m_Layer: 31
+  m_Layer: 6
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Player Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &1932823196297073084
 CapsuleCollider2D:
@@ -150,8 +150,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000014901161, y: 0.001341641}
-  m_Size: {x: 0.14259705, y: 0.57501376}
+  m_Offset: {x: 0.0042814165, y: 0}
+  m_Size: {x: 0.148922, y: 0.571856}
   m_Direction: 0
 --- !u!114 &3330825034148226210
 MonoBehaviour:
