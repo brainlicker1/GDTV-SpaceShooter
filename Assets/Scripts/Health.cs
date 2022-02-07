@@ -8,10 +8,12 @@ public class Health : MonoBehaviour
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] bool applyCameraShake;
     ScreenShake cameraShake;
+    AudioController audioController;
 
      void Awake()
     {
      cameraShake = Camera.main.GetComponent<ScreenShake>();
+     audioController = FindObjectOfType<AudioController>();
     }
      void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,7 +25,7 @@ public class Health : MonoBehaviour
             OnHit();
             ShakeCamera();
             damageDealer.Hit();
-
+            audioController.PlayImpactSFX();
         }
     }
 
@@ -39,6 +41,7 @@ public class Health : MonoBehaviour
 
         if(health <= 0) {
             Destroy(gameObject);
+            audioController.PlayExplodeSFX();
         }
 
     }   
