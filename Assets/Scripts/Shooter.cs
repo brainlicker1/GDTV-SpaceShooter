@@ -16,12 +16,16 @@ public class Shooter : MonoBehaviour
     Coroutine firingCoroutine;
     AudioController audioController;
 
+    [Header("Projectile")]
+    [SerializeField] Transform gun = null;
+
+    
     [HideInInspector] public bool isFiring; 
      void Awake() {
         audioController = FindObjectOfType<AudioController>();
     }
     void Start()
-    {
+    {   
         if(useAI){
             isFiring = true;
         }
@@ -49,8 +53,8 @@ public class Shooter : MonoBehaviour
     IEnumerator FireContinuously(){
 
         while(true){
-        
-        GameObject instance = Instantiate(projectilePrefab, transform.position
+           
+        GameObject instance = Instantiate(projectilePrefab, gun.position
         , Quaternion.identity);
         Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
 

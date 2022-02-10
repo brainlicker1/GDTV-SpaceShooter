@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {   
@@ -12,12 +13,15 @@ public class Health : MonoBehaviour
     ScreenShake cameraShake;
     AudioController audioController;
     ScoreKeeper scoreKeeper;
+     LevelManager levelManager;
 
      void Awake()
     {
      cameraShake = Camera.main.GetComponent<ScreenShake>();
      audioController = FindObjectOfType<AudioController>();
      scoreKeeper = FindObjectOfType<ScoreKeeper>();
+     levelManager = FindObjectOfType<LevelManager>();
+
     }
      void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,6 +49,8 @@ public class Health : MonoBehaviour
 
         if(health <= 0) {
             Die();
+            
+           
         }
 
     }   
@@ -61,9 +67,12 @@ public class Health : MonoBehaviour
     public void Die(){
         if(!isPlayer) {
             scoreKeeper.ModifyScore(score);
+        } else {
+             levelManager.LoadDeath();
         }
         Destroy(gameObject);
             audioController.PlayExplodeSFX();
-
+            
     }
+    
 }
